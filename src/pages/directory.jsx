@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import { asset } from '../components/ui.jsx'
 
 /* ---------- bookings + availability helpers ---------- */
 export function getBookings() {
@@ -76,8 +77,10 @@ export function DirectoryPage({ title, eyebrow, data, basePath, priceLabel }) {
       <div className="grid grid-3">
         {list.map((d) => (
           <Link key={d.id} to={`${basePath}/${d.id}`} className="card">
-            <div className="photo" style={{ background: `linear-gradient(135deg, ${d.hue}, ${d.hue}CC)`, aspectRatio: '16/9' }}>
-              <span>{d.name}</span>
+            <div className="photo" style={{ background: `linear-gradient(135deg, ${d.hue}, ${d.hue}CC)`, aspectRatio: '16/9', position: 'relative', overflow: 'hidden' }}>
+              {d.photo && <img src={asset(d.photo)} alt={d.name} loading="lazy"
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />}
+              {!d.photo && <span>{d.name}</span>}
             </div>
             <div style={{ padding: '14px 16px' }}>
               <h3>{d.name}</h3>
@@ -128,8 +131,10 @@ export function ProfilePage({ data, basePath, backLabel, extraActions }) {
           <p style={{ fontSize: 22, fontFamily: 'var(--serif)', margin: '12px 0' }}>
             {entity.range || (entity.priceKg ? `₾${entity.priceKg} / კგ` : `₾${entity.price?.toLocaleString()} / ღონისძიება`)}
           </p>
-          <div className="photo" style={{ background: `linear-gradient(135deg, ${entity.hue}, ${entity.hue}CC)`, borderRadius: 14, aspectRatio: '16/8', margin: '14px 0' }}>
-            <span>{entity.name} — პორტფოლიო</span>
+          <div className="photo" style={{ background: `linear-gradient(135deg, ${entity.hue}, ${entity.hue}CC)`, borderRadius: 14, aspectRatio: '16/8', margin: '14px 0', position: 'relative', overflow: 'hidden' }}>
+            {entity.photo && <img src={asset(entity.photo)} alt={entity.name}
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />}
+            {!entity.photo && <span>{entity.name} — პორტფოლიო</span>}
           </div>
           <div style={{ display: 'flex', gap: 10, marginTop: 8 }}>
             {[0.9, 0.7, 0.5].map((a) => (

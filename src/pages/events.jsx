@@ -452,6 +452,8 @@ function renderSection(key, ev, update, ctx, delay = 0) {
                   disabled={busy && !on}
                   style={busy && !on ? { opacity: 0.55, cursor: 'not-allowed' } : undefined}
                   onClick={() => { if (!busy || on) toggleIn('artistIds', a.id) }}>
+                  {a.photo && <img src={asset(a.photo)} alt="" loading="lazy"
+                    style={{ width: '100%', aspectRatio: '16/8', objectFit: 'cover', borderRadius: 10 }} />}
                   <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
                     <div className="pick-ava" style={{ background: a.hue }}>{AV[a.type] || '🎵'}</div>
                     <div>
