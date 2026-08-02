@@ -1,0 +1,18 @@
+{
+ "dishes": [
+  { "id": "m-salads", "name": "სალათების ასორტი", "price": 12 },
+  { "id": "m-khachapuri", "name": "ხაჭაპური აჭარული/იმერული", "price": 9 },
+  { "id": "m-mtsvadi", "name": "მწვადი ღორის/ხბოს", "price": 18 },
+  { "id": "m-fish", "name": "კალმახი ბროწეულით", "price": 22 },
+  { "id": "m-khinkali", "name": "ხინკალი (6 ც.)", "price": 10 },
+  { "id": "m-veggie", "name": "ვეგეტარიანული კერძები", "price": 14 },
+  { "id": "m-dessert", "name": "დესერტების ასორტი", "price": 11 },
+  { "id": "m-fruit", "name": "ხილის ლანგარი", "price": 8 }
+ ],
+ "drinks": [
+  { "id": "d-wine", "name": "ღვინო (სახლის, ლიმიტით)", "price": 15 },
+  { "id": "d-soft", "name": "უალკოჰოლო პაკეტი", "price": 7 },
+  { "id": "d-premium", "name": "პრემიუმ ბარი", "price": 28 },
+  { "id": "d-champagne", "name": "შამპანური სადღეგრძელოსთვის", "price": 9 }
+ ]
+}

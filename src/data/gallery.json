@@ -1,0 +1,50 @@
+[
+ {
+  "id": "g1",
+  "kind": "design",
+  "title": "Pink + White · ქორწილი",
+  "author": "ნინო & გიორგი",
+  "hue": "#EBAEBB",
+  "likes": 124
+ },
+ {
+  "id": "g2",
+  "kind": "design",
+  "title": "Talking to the Moon",
+  "author": "სალომე გ.",
+  "hue": "#2A3B5C",
+  "likes": 98
+ },
+ {
+  "id": "g3",
+  "kind": "design",
+  "title": "ჩემო ცისფერთვალება · ბეიბი შაუერი",
+  "author": "თამარ ბ.",
+  "hue": "#AEC6E8",
+  "likes": 87
+ },
+ {
+  "id": "g4",
+  "kind": "invitation",
+  "title": "ოქროს მინიმალიზმი",
+  "author": "ლუკა შ.",
+  "hue": "#C9A24B",
+  "likes": 64
+ },
+ {
+  "id": "g5",
+  "kind": "invitation",
+  "title": "ვარდისფერი აკვარელი",
+  "author": "ანა წ.",
+  "hue": "#F0D4DA",
+  "likes": 52
+ },
+ {
+  "id": "g6",
+  "kind": "design",
+  "title": "Let's Groove · დაბადების დღე",
+  "author": "ირაკლი მ.",
+  "hue": "#B85A34",
+  "likes": 45
+ }
+]

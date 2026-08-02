@@ -1,0 +1,188 @@
+[
+ {
+  "id": "vere",
+  "name": "დარბაზი „ვერე“",
+  "district": "ვაკე",
+  "capacity": 200,
+  "price": 3000,
+  "rating": 4.9,
+  "reviews": 128,
+  "hue": "#8C6F63",
+  "amenities": [
+   "პარკინგი",
+   "კვების სერვისი",
+   "კონდიცირება"
+  ],
+  "has3d": true,
+  "region": "tbilisi",
+  "city": "თბილისი · ვაკე",
+  "area": 420,
+  "features": [
+   "პარკინგი",
+   "კვება ადგილზე",
+   "სცენა"
+  ],
+  "photos": [
+   "/venues/vere-1.jpg",
+   "/venues/vere-2.jpg"
+  ]
+ },
+ {
+  "id": "alazani",
+  "name": "სასტუმრო „ალაზანი“",
+  "district": "საბურთალო",
+  "capacity": 350,
+  "price": 4800,
+  "rating": 4.7,
+  "reviews": 86,
+  "hue": "#C9A24B",
+  "amenities": [
+   "ტერასა",
+   "ლაივ კუხნა",
+   "სცენა"
+  ],
+  "has3d": true,
+  "region": "kakheti",
+  "city": "კახეთი · წინანდალი",
+  "area": 650,
+  "features": [
+   "სასტუმრო",
+   "ტერასა",
+   "ლაივ-კუხნა"
+  ],
+  "photos": [
+   "/venues/alazani-1.jpg",
+   "/venues/alazani-2.jpg"
+  ]
+ },
+ {
+  "id": "mtatsminda",
+  "name": "ტერასა „მთაწმინდა“",
+  "district": "მთაწმინდა",
+  "capacity": 120,
+  "price": 2400,
+  "rating": 4.8,
+  "reviews": 64,
+  "hue": "#8A7F72",
+  "amenities": [
+   "ღია ცის ქვეშ",
+   "ხედი ქალაქზე"
+  ],
+  "has3d": true,
+  "region": "tbilisi",
+  "city": "თბილისი · მთაწმინდა",
+  "area": 300,
+  "features": [
+   "ღია ცის ქვეშ",
+   "პანორამა",
+   "ბარი"
+  ],
+  "photos": [
+   "/venues/mtatsminda-1.jpg",
+   "/venues/mtatsminda-2.jpg"
+  ]
+ },
+ {
+  "id": "orbeliani",
+  "name": "„ორბელიანი ჰოლი“",
+  "district": "ცენტრი",
+  "capacity": 260,
+  "price": 3600,
+  "rating": 4.6,
+  "reviews": 51,
+  "hue": "#6E5D52",
+  "amenities": [
+   "ისტორიული შენობა",
+   "პარკინგი"
+  ],
+  "has3d": false,
+  "region": "tbilisi",
+  "city": "თბილისი · ცენტრი",
+  "area": 520,
+  "features": [
+   "ისტორიული შენობა",
+   "ქვის კედლები",
+   "ეზო"
+  ],
+  "photos": [
+   "/venues/orbeliani-1.jpg",
+   "/venues/orbeliani-2.jpg"
+  ]
+ },
+ {
+  "id": "lisi",
+  "name": "„ლისის ბაღი“",
+  "district": "ლისი",
+  "capacity": 180,
+  "price": 2900,
+  "rating": 4.8,
+  "reviews": 73,
+  "hue": "#7A6B4F",
+  "amenities": [
+   "ბაღი",
+   "შატრები",
+   "საბავშვო კუთხე"
+  ],
+  "has3d": true,
+  "region": "tbilisi",
+  "city": "თბილისი · ლისი",
+  "area": 800,
+  "features": [
+   "ბაღი",
+   "შატრები",
+   "საბავშვო კუთხე"
+  ],
+  "photos": [
+   "/venues/lisi-1.jpg",
+   "/venues/lisi-2.jpg"
+  ]
+ },
+ {
+  "id": "funicular",
+  "name": "„ფუნიკულიორის დარბაზი“",
+  "district": "მთაწმინდა",
+  "capacity": 400,
+  "price": 5600,
+  "rating": 4.9,
+  "reviews": 112,
+  "hue": "#5C5248",
+  "amenities": [
+   "პანორამული ხედი",
+   "ორი დარბაზი"
+  ],
+  "has3d": false,
+  "region": "tbilisi",
+  "city": "თბილისი · მთაწმინდის პარკი",
+  "area": 700,
+  "features": [
+   "პანორამული ხედი",
+   "ორი დარბაზი",
+   "ლიფტ-ფუნიკულიორი"
+  ],
+  "photos": [
+   "/venues/funicular-1.jpg",
+   "/venues/funicular-2.jpg"
+  ]
+ },
+ {
+  "id": "batumi-sea",
+  "price": 6500,
+  "capacity": 280,
+  "hue": "#4A8FA8",
+  "has3d": true,
+  "region": "batumi",
+  "city": "ბათუმი · ზღვისპირა",
+  "area": 560,
+  "features": [
+   "ზღვის ხედი",
+   "ღია ტერასა",
+   "საკუთარი სანაპირო"
+  ],
+  "name": "დარბაზი «ზღვის ტალღა»",
+  "desc": "ბათუმის სანაპიროზე მდებარე დარბაზი პანორამული ფანჯრებით ზღვაზე. მზის ჩასვლა და ტალღების ხმა თქვენი ზეიმის ბუნებრივი დეკორაციაა.",
+  "photos": [
+   "/venues/batumi-sea-1.jpg",
+   "/venues/batumi-sea-2.jpg"
+  ]
+ }
+]

@@ -1,0 +1,73 @@
+[
+ {
+  "id": "alazani-rooms",
+  "name": "სასტუმრო „ალაზანი”",
+  "inVenue": "alazani",
+  "pricePerNight": 180,
+  "stars": 4,
+  "emoji": "🏨",
+  "hue": "#B08D6E",
+  "desc": "დარბაზთან ერთ შენობაში — სტუმრები ზეიმიდან პირდაპირ ნომრებში ადიან",
+  "amen": [
+   "საუზმე",
+   "პარკინგი",
+   "აუზი"
+  ]
+ },
+ {
+  "id": "hotel-vere",
+  "name": "Vere Palace",
+  "pricePerNight": 220,
+  "stars": 5,
+  "emoji": "🏛",
+  "hue": "#C9A24B",
+  "desc": "პრემიუმ სასტუმრო ვაკეში, დარბაზ „ვერესთან” 5 წუთში",
+  "amen": [
+   "საუზმე",
+   "სპა",
+   "ტრანსფერი"
+  ]
+ },
+ {
+  "id": "hotel-old",
+  "name": "Old Tbilisi Inn",
+  "pricePerNight": 140,
+  "stars": 3,
+  "emoji": "🏠",
+  "hue": "#8A6E5A",
+  "desc": "მყუდრო სასტუმრო ძველ თბილისში — ისტორიული განწყობისთვის",
+  "amen": [
+   "საუზმე",
+   "ტერასა"
+  ]
+ },
+ {
+  "id": "hotel-panorama",
+  "name": "Panorama City",
+  "pricePerNight": 260,
+  "stars": 5,
+  "emoji": "🌆",
+  "hue": "#3E5A9C",
+  "desc": "ქალაქის ხედებით, ორბელიანისა და ფუნიკულიორის დარბაზებთან ახლოს",
+  "amen": [
+   "საუზმე",
+   "სპა",
+   "ფიტნესი",
+   "პარკინგი"
+  ]
+ },
+ {
+  "id": "hotel-batumi",
+  "name": "Sea Breeze Batumi",
+  "pricePerNight": 240,
+  "stars": 4,
+  "emoji": "🌊",
+  "hue": "#4A8FA8",
+  "desc": "ზღვისპირა სასტუმრო „ზღვის ტალღის” გვერდით",
+  "amen": [
+   "საუზმე",
+   "აუზი",
+   "პლაჟი"
+  ]
+ }
+]
