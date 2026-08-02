@@ -27,6 +27,8 @@ const NAV_T = {
 export function Header() {
   const navigate = useNavigate()
   const user = JSON.parse(localStorage.getItem('cm_user') || 'null')
+  const [menuOpen, setMenuOpen] = React.useState(false)
+  const close = () => setMenuOpen(false)
   return (
     <header className="site-header">
       <div className="container">
@@ -49,7 +51,27 @@ export function Header() {
             <Link to="/login" className="btn btn-primary">შესვლა</Link>
           )}
         </nav>
+        <button className="burger" aria-label="მენიუ" onClick={() => setMenuOpen(!menuOpen)}>
+          <span /><span /><span />
+        </button>
       </div>
+      {menuOpen && (
+        <nav className="mobile-nav" onClick={close}>
+          <NavLink to="/">მთავარი</NavLink>
+          <NavLink to="/venues">დარბაზები</NavLink>
+          <NavLink to="/companies">კომპანიები</NavLink>
+          <NavLink to="/artists">არტისტები</NavLink>
+          <NavLink to="/gallery">გალერეა</NavLink>
+          <NavLink to="/my-events">ჩემი ღონისძიებები</NavLink>
+          {user ? (
+            <button className="btn btn-ghost" onClick={() => { localStorage.removeItem('cm_user'); navigate('/') }}>
+              {user.name} · გასვლა
+            </button>
+          ) : (
+            <Link to="/login" className="btn btn-primary">შესვლა</Link>
+          )}
+        </nav>
+      )}
     </header>
   )
 }

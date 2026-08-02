@@ -415,7 +415,7 @@ function renderSection(key, ev, update, ctx, delay = 0) {
     case 'companies': return (
       <Sect key={key} id="s-companies" title={SECTION_TITLES.companies} {...D}
         note="თითოეულ კომპანიას საკუთარი სრული ინვენტარი აქვს — ყვავილები, ავეჯი, განათება — მთელი ღონისძიება ერთ სტილში აეწყობა">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(240px,1fr))', gap: 10 }}>
+        <div className="pick-grid" style={{ '--min': '240px' }}>
           {companies.map((c) => (
             <button key={c.id} className={`pick-card ${ev.companyIds.includes(c.id) ? 'on' : ''}`}
               onClick={() => toggleIn('companyIds', c.id)}>
@@ -443,7 +443,7 @@ function renderSection(key, ev, update, ctx, delay = 0) {
       return (
         <Sect key={key} id="s-artists" title={SECTION_TITLES.artists} {...D}
           note={ev.date ? `თარიღი: ${ev.date} — დაკავებული არტისტების არჩევა შეზღუდულია` : 'მიუთითეთ თარიღი «ძირითად ინფორმაციაში» — ხელმისაწვდომობა ავტომატურად შემოწმდება'}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(250px,1fr))', gap: 10 }}>
+          <div className="pick-grid" style={{ '--min': '250px' }}>
             {artists.map((a) => {
               const busy = ev.date && (a.busyDates || []).includes(ev.date)
               const on = ev.artistIds.includes(a.id)
@@ -482,7 +482,7 @@ function renderSection(key, ev, update, ctx, delay = 0) {
       return (
         <Sect key={key} id="s-activities" title={SECTION_TITLES.activities} {...D}
           note={venue ? `${venue.city} — ადგილობრივი აქტივობები მონიშნულია 📍` : 'აირჩიეთ დარბაზი — მდებარეობის აქტივობებიც გამოჩნდება'}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(230px,1fr))', gap: 10 }}>
+          <div className="pick-grid" style={{ '--min': '230px' }}>
             {all.map((a) => (
               <button key={a.id} className={`pick-card ${ev.activityIds.includes(a.id) ? 'on' : ''}`}
                 onClick={() => toggleIn('activityIds', a.id)}>
@@ -515,7 +515,7 @@ function renderSection(key, ev, update, ctx, delay = 0) {
       return (
         <Sect key={key} id="s-hotel" title={SECTION_TITLES.hotel} {...D}
           note={venue?.id === 'alazani' ? 'თქვენი დარბაზი სასტუმროშია — ოთახები იქვე დაჯავშნეთ' : 'პარტნიორი სასტუმროები დარბაზის მახლობლად'}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(230px,1fr))', gap: 10, marginBottom: 14 }}>
+          <div className="pick-grid" style={{ '--min': '230px', marginBottom: 14 }}>
             {list.map((h) => (
               <button key={h.id} className={`pick-card ${ev.hotel.hotelId === h.id ? 'on' : ''}`}
                 onClick={() => update({ hotel: { ...ev.hotel, hotelId: ev.hotel.hotelId === h.id ? '' : h.id } })}>
@@ -641,7 +641,7 @@ function VenueSection({ ev, update, venue, done, delay }) {
   return (
     <Sect id="s-venue" title={SECTION_TITLES.venue} done={done} delay={delay}
       note="აირჩიეთ დარბაზი — «დეტალები» გაჩვენებთ ფოტოებსა და სრულ აღწერას">
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(230px,1fr))', gap: 10, marginBottom: 14 }}>
+      <div className="pick-grid" style={{ '--min': '230px', marginBottom: 14 }}>
         {venues.map((v) => (
           <div key={v.id} className={`pick-card ${ev.venueId === v.id ? 'on' : ''}`}
             onClick={() => update({ venueId: ev.venueId === v.id ? '' : v.id })} style={{ cursor: 'pointer' }}>
@@ -752,7 +752,7 @@ function TransferSection({ ev, update, intlGuests, delay }) {
         : 'დაამატეთ სტუმრები ქვეყნების მითითებით — უცხოელი სტუმრები აქ გამოჩნდებიან'}>
       {intlGuests.length > 0 && (
         <>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: 10, marginBottom: 14 }}>
+          <div className="pick-grid" style={{ '--min': '160px', marginBottom: 14 }}>
             {TRANSFER_CLASSES.map((t) => (
               <button key={t.id} className={`transfer-class ${cls === t.id ? 'on' : ''}`}
                 onClick={() => update({ transfer: { ...ev.transfer, enabled: true, classId: t.id } })}>
@@ -865,7 +865,7 @@ function GuestsSection({ ev, update, done, delay }) {
             </div>
             <div style={{ flex: 1, minWidth: 280 }}>
               <p className="muted" style={{ margin: '0 0 8px' }}>1) აირჩიეთ მაგიდა · 2) დააჭირეთ სტუმარს ქვემოთ — დაჯდება პირველ თავისუფალ ადგილზე</p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(190px,1fr))', gap: 10 }}>
+              <div className="pick-grid" style={{ '--min': '190px' }}>
                 {tables.map((t) => {
                   const g = tableGuests(t.no)
                   return (
@@ -1002,7 +1002,7 @@ function DressSection({ ev, update, done, delay }) {
         <Chip on={ev.dress.mode === 'custom'} onClick={() => setD({ mode: 'custom' })}>საკუთარი დიზაინი</Chip>
       </div>
       {ev.dress.mode === 'salon' && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: 10 }}>
+        <div className="pick-grid" style={{ '--min': '200px' }}>
           {DRESS_SALONS.map((s2) => (
             <button key={s2.id} className={`pick-card ${ev.dress.salonId === s2.id ? 'on' : ''}`}
               onClick={() => setD({ salonId: s2.id })}>
@@ -1160,7 +1160,7 @@ function DanceSection({ ev, update, delay }) {
   )
   return (
     <Sect id="s-dance" title={SECTION_TITLES.dance} done={!!ev.danceId} delay={delay}>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(230px,1fr))', gap: 10, marginBottom: 10 }}>
+      <div className="pick-grid" style={{ '--min': '230px', marginBottom: 10 }}>
         {DANCE_CLASSES.map((d) => (
           <button key={d.id} className={`pick-card ${ev.danceId === d.id ? 'on' : ''}`}
             onClick={() => update({ danceId: ev.danceId === d.id ? '' : d.id })}>

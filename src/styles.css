@@ -288,3 +288,45 @@ h3 { font-size: 18px; }
 button, input, select, textarea { font-family: 'BPG Glaho', 'Noto Sans Georgian', sans-serif; }
 h1, h2, h3, h4, .eyebrow { font-family: 'BPG Ninomtavruli', 'Noto Serif Georgian', serif; }
 h1 { letter-spacing: 0.5px; }
+
+/* ---- pick-grid: desktop grid, mobile swipe carousel ---- */
+.pick-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(var(--min, 230px), 1fr)); gap: 10px; }
+
+/* ---- burger ---- */
+.burger { display: none; background: none; border: 1.5px solid var(--sand); border-radius: 10px;
+  padding: 8px 9px; cursor: pointer; flex-direction: column; gap: 4px; }
+.burger span { display: block; width: 18px; height: 2px; background: var(--umber); border-radius: 2px; }
+.mobile-nav { display: none; }
+
+@media (max-width: 820px) {
+  .burger { display: flex; }
+  .mobile-nav { display: flex; flex-direction: column; gap: 4px; padding: 10px 18px 16px;
+    background: var(--ivory); border-bottom: 1px solid var(--linen); animation: sectIn 0.25s ease; }
+  .mobile-nav a, .mobile-nav button { padding: 11px 10px; border-radius: 10px; font-size: 15px;
+    text-decoration: none; color: var(--umber); }
+  .mobile-nav a.active { background: var(--linen); font-weight: 700; }
+  .mobile-nav .btn-primary { color: #fff; justify-content: center; margin-top: 6px; }
+}
+
+/* ---- mobile: carousels + layout ---- */
+@media (max-width: 760px) {
+  .pick-grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: min(82vw, 320px);
+    overflow-x: auto; scroll-snap-type: x mandatory; padding: 2px 2px 10px; -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin; }
+  .pick-grid > * { scroll-snap-align: start; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .ev-sect { padding: 16px 14px; }
+  h1 { font-size: 26px; }
+}
+
+/* ---- 3D viewer on mobile: sticky canvas on top, tool panels scroll under it ---- */
+@media (max-width: 1000px) {
+  .viewer-grid { display: flex; flex-direction: column; gap: 12px; }
+  .viewer-grid > .viewport { order: -1; position: sticky; top: 62px; z-index: 8;
+    height: 46vh; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 26px rgba(40,32,24,0.18); }
+  .viewer-grid > .viewport canvas { height: 100% !important; }
+  .viewer-grid > aside.viewer-panel { max-height: none !important; overflow: visible !important; }
+  .viewer-grid > aside.viewer-panel:last-of-type { order: 0; }
+  .viewer-grid > aside.viewer-panel:first-of-type { order: 1; }
+  .viewer-panel .tool-col { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+}
