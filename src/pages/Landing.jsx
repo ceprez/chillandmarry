@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FlowerMark } from '../components/ui.jsx'
+import { asset, FlowerMark } from '../components/ui.jsx'
 import venues from '../data/venues.json'
 import companies from '../data/companies.json'
 import { VenueCard } from '../components/ui.jsx'
@@ -66,7 +66,7 @@ export default function Landing() {
             {companies.map((c) => (
               <Link key={c.id} to={`/companies/${c.id}`} className="card">
                 <div className="photo" style={{ background: `linear-gradient(135deg, ${c.hue}, ${c.hue}CC)`, aspectRatio: '16/8', position: 'relative', overflow: 'hidden' }}>
-                  {c.photo && <img src={c.photo} alt={c.name} loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />}
+                  {c.photo && <img src={asset(c.photo)} alt={c.name} loading="lazy" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />}
                 </div>
                 <div style={{ padding: '14px 16px' }}>
                   <h3>{c.name}</h3>

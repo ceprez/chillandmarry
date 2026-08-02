@@ -1,5 +1,6 @@
 import React, { useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
+import { asset } from '../components/ui.jsx'
 import venues from '../data/venues.json'
 import companies from '../data/companies.json'
 import artists from '../data/artists.json'
@@ -418,7 +419,7 @@ function renderSection(key, ev, update, ctx, delay = 0) {
           {companies.map((c) => (
             <button key={c.id} className={`pick-card ${ev.companyIds.includes(c.id) ? 'on' : ''}`}
               onClick={() => toggleIn('companyIds', c.id)}>
-              {c.photo && <img src={c.photo} alt="" loading="lazy" style={{ width: '100%', aspectRatio: '16/7', objectFit: 'cover', borderRadius: 10 }} />}
+              {c.photo && <img src={asset(c.photo)} alt="" loading="lazy" style={{ width: '100%', aspectRatio: '16/7', objectFit: 'cover', borderRadius: 10 }} />}
               <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
                 <div className="pick-ava" style={{ background: c.hue }}>🤝</div>
                 <div>
@@ -643,7 +644,7 @@ function VenueSection({ ev, update, venue, done, delay }) {
           <div key={v.id} className={`pick-card ${ev.venueId === v.id ? 'on' : ''}`}
             onClick={() => update({ venueId: ev.venueId === v.id ? '' : v.id })} style={{ cursor: 'pointer' }}>
             <div style={{ position: 'relative', borderRadius: 10, overflow: 'hidden', aspectRatio: '16/9', background: v.hue }}>
-              {v.photos?.[0] && <img src={v.photos[0]} alt={v.name} loading="lazy"
+              {v.photos?.[0] && <img src={asset(v.photos[0])} alt={v.name} loading="lazy"
                 style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />}
               {ev.venueId === v.id && <span className="badge" style={{ position: 'absolute', top: 8, right: 8 }}>არჩეულია ✓</span>}
             </div>
@@ -676,7 +677,7 @@ function VenueSection({ ev, update, venue, done, delay }) {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 12 }}>
               {(modal.photos || []).map((p, i) => (
-                <img key={i} src={p} alt="" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 10, gridColumn: i === 0 ? '1 / -1' : undefined }} />
+                <img key={i} src={asset(p)} alt="" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: 10, gridColumn: i === 0 ? '1 / -1' : undefined }} />
               ))}
             </div>
             {modal.desc && <p style={{ fontSize: 14, lineHeight: 1.7, marginBottom: 12 }}>{modal.desc}</p>}

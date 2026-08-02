@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { Stepper, VenueCard, FlowerMark } from '../components/ui.jsx'
+import { asset, Stepper, VenueCard, FlowerMark } from '../components/ui.jsx'
 import venues from '../data/venues.json'
 
 /* ---------- Auth ---------- */
@@ -144,7 +144,7 @@ export function VenueDetail() {
       <div style={{ display: 'flex', gap: 40, flexWrap: 'wrap' }}>
         <div style={{ flex: '1 1 460px' }}>
           <div className="photo" style={{ background: `linear-gradient(135deg, ${venue.hue}, ${venue.hue}CC)`, borderRadius: 16, aspectRatio: '16/10', position: 'relative', overflow: 'hidden' }}>
-            {venue.photos?.[0] && <img src={venue.photos[0]} alt={venue.name}
+            {venue.photos?.[0] && <img src={asset(venue.photos[0])} alt={venue.name}
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />}
             {venue.has3d && <span className="badge tag">3D · 360°</span>}
             <span>{venue.name}</span>
@@ -152,7 +152,7 @@ export function VenueDetail() {
           <div style={{ display: 'flex', gap: 10, marginTop: 12 }}>
             {[1, 2, 3].map((i) => (
               <div key={i} className="photo" style={{ flex: 1, aspectRatio: '4/3', borderRadius: 10, background: `${venue.hue}${['E6', 'B3', '80'][i - 1]}`, position: 'relative', overflow: 'hidden' }}>
-                {venue.photos?.[i - 1] && <img src={venue.photos[i - 1]} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />}
+                {venue.photos?.[i - 1] && <img src={asset(venue.photos[i - 1])} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />}
               </div>
             ))}
           </div>

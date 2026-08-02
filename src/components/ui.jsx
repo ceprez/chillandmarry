@@ -2,6 +2,9 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 
 /* One-line flower mark — the brand signature */
+/* GitHub Pages-safe public asset path */
+export const asset = (p) => import.meta.env.BASE_URL + String(p || '').replace(/^\//, '')
+
 export function FlowerMark({ size = 34, color = 'var(--umber)' }) {
   return (
     <svg width={size} height={size * 1.25} viewBox="0 0 120 150" fill="none" aria-hidden="true">
@@ -109,7 +112,7 @@ export function VenueCard({ venue }) {
   return (
     <article className="card">
       <div className="photo" style={{ background: `linear-gradient(135deg, ${venue.hue}, ${venue.hue}CC)`, position: 'relative', overflow: 'hidden' }}>
-        {venue.photos?.[0] && <img src={venue.photos[0]} alt={venue.name} loading="lazy"
+        {venue.photos?.[0] && <img src={asset(venue.photos[0])} alt={venue.name} loading="lazy"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />}
         {venue.has3d && <span className="badge tag">3D · 360°</span>}
         <span>{venue.name}</span>
